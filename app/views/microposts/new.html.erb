@@ -1,5 +1,6 @@
+<% provide(:title, "New Post") %>
 <h1>New Micropost</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', microposts_path %>
+<%= link_to 'Back', microposts_path, quotes_path, class: "btn btn-danger btn-small", data: { confirm: 'Are you sure you want to leave without saving?' } %>

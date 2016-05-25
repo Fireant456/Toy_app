@@ -1,14 +1,16 @@
+<% provide(:title, "View Post") %>
 <p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Post Content:
+    <%= @micropost.content %>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
+  <div class="panel-body">
+    User:
+    <%= @micropost.user_id %>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @micropost.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
-<%= link_to 'Back', microposts_path %>
+<%= link_to 'Edit', edit_micropost_path(@micropost), class: "btn btn-primary btn-small"  %> |
+<%= link_to 'Back', microposts_path, class: "btn btn-success btn-small"  %>

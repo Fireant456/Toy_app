@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ToyApp</title>
+  <title><%= yield(:title) %> | Toy App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar-inverse">
+    <div class="container">
+      <%= link_to "Toy App", '/quotes', id: "logo", class: "navbar-brand"%>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", '/static_pages/home' %></li>
+        <li><%= link_to "Microposts", '/' %></li>
+        <li><%= link_to "Help", '/static_pages/help' %></li>
+        <li><%= link_to "About", '/static_pages/about' %></li>
+      </ul>
+    </div>
+  </nav>
 
-<%= yield %>
-
+  <div class="container-fluid">
+    
+    <%= yield %>
+    
+  </div>
 </body>
 </html>

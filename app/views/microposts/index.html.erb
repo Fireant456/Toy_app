@@ -1,8 +1,9 @@
+<% provide(:title, "All Posts") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Microposts</h1>
-
-<table>
+<div class="panel panel-primary">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Content</th>
@@ -14,11 +15,11 @@
   <tbody>
     <% @microposts.each do |micropost| %>
       <tr>
-        <td><%= micropost.content %></td>
-        <td><%= micropost.user_id %></td>
-        <td><%= link_to 'Show', micropost %></td>
-        <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
-        <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to micropost.content, micropost, class: "cust-link" %></td>
+        <td><%= link_to micropost.user_id, micropost, class: "cust-link" %></td>
+        <td><%= link_to 'Show', micropost, class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_micropost_path(micropost), class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Micropost', new_micropost_path %>
+<%= link_to 'New Micropost', new_micropost_path, class: "btn btn-small btn-success" %>

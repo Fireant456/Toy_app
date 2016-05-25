@@ -1,6 +1,7 @@
+<% provide(:title, "Edit Post") %>
 <h1>Editing Micropost</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @micropost %> |
-<%= link_to 'Back', microposts_path %>
+<%= link_to 'Show', @micropost, class: "btn btn-primary btn-small", data: { confirm: 'Are you sure you want to leave without saving?' } %> |
+<%= link_to 'Back', microposts_path, class: "btn btn-danger btn-small", data: { confirm: 'Are you sure you want to leave without saving?' } %>
